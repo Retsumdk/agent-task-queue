@@ -1,0 +1,32 @@
+{
+  "name": "agent-task-queue",
+  "version": "1.0.0",
+  "description": "Manage and prioritize tasks for AI agents with retry logic and dependency tracking",
+  "main": "dist/index.js",
+  "type": "module",
+  "bin": {
+    "task": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "task",
+    "queue",
+    "priority",
+    "retry"
+  ],
+  "author": "The BookMaster",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
