@@ -1,103 +1,23 @@
-# Agent-Task-Queue
+# Agent Task Queue
 
-An AI agent task queue for managing and prioritizing tasks for AI agents with retry logic and dependency tracking.
+Manage and prioritize tasks for AI agents with retry logic and dead letter handling.
+
+[![CI](https://github.com/Retsumdk/agent-task-queue/workflows/CI/badge.svg)](https://github.com/Retsumdk/agent-task-queue/actions)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ## Features
 
-- Task prioritization with priority levels (1-5)
-- Retry logic with exponential backoff
-- Dependency tracking (tasks are not completed until dependencies are done)
-- Task status tracking (pending, inprogress, done, failed)
-- Configurable task expirations
-- Task retry and rescheduling
+- **Priority Queues** - Execute high-priority tasks first
+- **Retry Logic** - Automatic retry with exponential backoff
+- **Dead Letter Queue** - Failed tasks for manual inspection
+- **Concurrency Control** - Limit parallel executions
 
-## Installation
 
-```bash
-npm install agent-task-queue
-```
 
-or
+## 🔗 Related Repos
 
-```bash
-yarn add agent-task-queue
-```
+- [ai-agent-infrastructure](https://github.com/Retsumdk/ai-agent-infrastructure) — BOLT, SCIEL, PromptForge ecosystem
+- [prompt-version-control](https://github.com/Retsumdk/prompt-version-control) — Version control for AI prompts
+- [agent-memory-store](https://github.com/Retsumdk/agent-memory-store) — Persistent memory for agents
 
-or
-
-```bash
-bun add agent-task-queue
-```
-
-## Usage
-
-### Build a Task
-
-```bash
-task build --name "Create report" --priority 5 --dependencies "report-generator"
-task build --name "Generate report" --priority 5
-```
-
-### Add Dependency
-
-```bash
-task add --name "Report generator" --dependencies "Create report"
-task add --name "Delete report" --dependencies "Create report"
-```
-
-### Run All Tasks
-
-```bash
-task run --all
-```
-
-### Check Status
-
-```bash
-task status --id <task-id>
-task status --all
-```
-
-### Dependency Graph
-
-```bash
-task graph
-```
-
-### Retry Task
-
-```bash
-task retry --id <task-id> --max-retries 3
-```
-
-## Configuration
-
-The tool can be configured via a config file or environment variables.
-
-### Config File
-
-```json
-{
-  "queue": ["priority", "first-served"],
-  "retry": {
-    "max-retries": 3,
-    "milliseconds": 5000
-  },
-  "dependent": {
-    "max-parallel": 10
-  }
-}
-```
-
-### Environment Variables
-
-- CONF_QUEUE=path/to/task-queue.json
-- KEEP_ANOTHERKEY=your-key-here
-
-## License
-
-MIT License - Author: The BookMaster
-
-The MIT License (MIT) is open full license that allows free use, modification, and distribution of agent-task-queue.
-
-Copyright (c) 2026 The BookMaster. All rights reserved.
