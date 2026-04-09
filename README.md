@@ -1,5 +1,8 @@
 # Agent Task Queue
 
+[![Build](https://github.com/Retsumdk/agent-task-queue/workflows/CI/badge.svg)](https://github.com/Retsumdk/agent-task-queue/actions)
+
+
 Manage and prioritize tasks for AI agents with retry logic and dead letter handling.
 
 [![CI](https://github.com/Retsumdk/agent-task-queue/workflows/CI/badge.svg)](https://github.com/Retsumdk/agent-task-queue/actions)
