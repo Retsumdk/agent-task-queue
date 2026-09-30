@@ -20,7 +20,7 @@
     "priority",
     "retry"
   ],
-  "author": "The BookMaster",
+  "author": "Retsumdk",
   "license": "MIT",
   "dependencies": {
     "commander": "^11.0.0"
